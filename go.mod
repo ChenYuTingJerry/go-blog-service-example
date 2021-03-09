@@ -1,4 +1,4 @@
-module github/go-programming-tour-book/blog-service
+module github/ChenYuTingJerry/blog-service
 
 go 1.15
 

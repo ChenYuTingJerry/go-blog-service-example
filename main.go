@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github/go-programming-tour-book/blog-service/global"
-	"github/go-programming-tour-book/blog-service/internal/routes"
-	"github/go-programming-tour-book/blog-service/pkg/setting"
+	"github/ChenYuTingJerry/blog-service/global"
+	"github/ChenYuTingJerry/blog-service/internal/routes"
+	"github/ChenYuTingJerry/blog-service/pkg/setting"
 	"log"
 	"net/http"
 	"time"

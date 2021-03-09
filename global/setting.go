@@ -1,6 +1,6 @@
 package global
 
-import "github/go-programming-tour-book/blog-service/pkg/setting"
+import "github/ChenYuTingJerry/blog-service/pkg/setting"
 
 var (
 	ServerSetting *setting.ServerSettingS

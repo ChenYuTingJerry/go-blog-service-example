@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	v1 "github/go-programming-tour-book/blog-service/internal/routes/api/v1"
+	v1 "github/ChenYuTingJerry/blog-service/internal/routes/api/v1"
 )
 
 func NewRouter() *gin.Engine {
