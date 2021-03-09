@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github/ChenYuTingJerry/blog-service/global"
+	"github/ChenYuTingJerry/blog-service/internal/model"
 	"github/ChenYuTingJerry/blog-service/internal/routes"
 	"github/ChenYuTingJerry/blog-service/pkg/setting"
 	"log"
@@ -13,8 +14,21 @@ import (
 func init() {
 	err := setupSetting()
 	if err != nil {
-		log.Fatal("init.setupSetting err: %v", err)
+		log.Fatalf("init.setupSetting err: %v", err)
 	}
+	err = setupDBEngine()
+	if err != nil {
+		log.Fatalf("init.setupDBEngine err: %v", err)
+	}
+}
+
+func setupDBEngine() error {
+	var err error
+	global.DBEngine, err = model.NewDBEngine(global.DatabaseSetting)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func main() {
