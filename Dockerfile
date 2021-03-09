@@ -7,7 +7,7 @@ RUN go build
 FROM alpine
 #RUN adduser -S -D -H -h /app appuser
 #USER appuser
+COPY --from=builder /build/configs/ /app/configs
 COPY --from=builder /build/blog-service /app/
-#COPY views/ /app/views
 WORKDIR /app
 CMD ["./blog-service"]
