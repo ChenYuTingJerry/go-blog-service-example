@@ -1,18 +1,23 @@
-version: "3"
+version: "3.6"
 
 services:
   web:
     build: .
     ports:
       - "8080:8080"
+    depends_on:
+      - db
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: gopher
+      MYSQL_PASSWORD: gopher
+      MYSQL_DATABASE: blog_service
     ports:
       - "3306:3306"
     volumes:
       - "./scripts/database.sql:/docker-entrypoint-initdb.d/1.sql"
       - "./scripts/schema.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "../mysql_data:/var/lib/mysql"

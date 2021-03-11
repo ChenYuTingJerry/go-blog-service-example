@@ -5,9 +5,9 @@ WORKDIR /build
 RUN go build
 
 FROM alpine
-#RUN adduser -S -D -H -h /app appuser
-#USER appuser
 COPY --from=builder /build/configs/ /app/configs
-COPY --from=builder /build/blog-service /app/
+COPY --from=builder /build/entrypoint.sh /entrypoint.sh
+COPY --from=builder /build/blog-service /app/blog-service
 WORKDIR /app
-CMD ["./blog-service"]
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
 	"github/ChenYuTingJerry/blog-service/global"
 	"github/ChenYuTingJerry/blog-service/internal/model"
 	"github/ChenYuTingJerry/blog-service/internal/routes"

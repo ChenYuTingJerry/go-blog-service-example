@@ -1,4 +1,4 @@
-CREATE TABLE blog_service.`blog_tag`
+CREATE TABLE IF NOT EXISTS blog_service.`blog_tag`
 (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `name`        varchar(100) DEFAULT '' COMMENT '標籤名稱',
@@ -12,7 +12,7 @@ CREATE TABLE blog_service.`blog_tag`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='標籤管理';
 
-CREATE TABLE blog_service.dbo.`blog_auth`
+CREATE TABLE IF NOT EXISTS blog_service.`blog_auth`
 (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `app_key`     varchar(20)  DEFAULT '' COMMENT 'Key',
@@ -26,7 +26,7 @@ CREATE TABLE blog_service.dbo.`blog_auth`
     PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='認證管理';
 
-CREATE TABLE blog_service.`blog_article_tag`
+CREATE TABLE IF NOT EXISTS blog_service.`blog_article_tag`
 (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `article_id`  int(11) NOT NULL COMMENT '文章ID',
@@ -40,7 +40,7 @@ CREATE TABLE blog_service.`blog_article_tag`
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章標籤關聯';
 
-CREATE TABLE blog_service.`blog_article`
+CREATE TABLE IF NOT EXISTS  blog_service.`blog_article`
 (
     `id`              int(10) unsigned NOT NULL AUTO_INCREMENT,
     `title`           varchar(100) DEFAULT '' COMMENT '文章標題',

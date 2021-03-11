@@ -1,6 +1,10 @@
 up:
-	docker-compose up --no-deps --build
+	docker-compose up
 up_web:
-	docker-compose up --no-deps --build web
+	docker-compose up web
+up_db:
+	docker-compose up db
 down:
 	docker-compose down
+prune:
+	docker system prune
