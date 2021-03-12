@@ -1,5 +1,5 @@
 up:
-	docker-compose up
+	docker-compose up --build
 up_web:
 	docker-compose up web
 up_db:
