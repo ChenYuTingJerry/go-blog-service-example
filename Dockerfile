@@ -6,6 +6,7 @@ RUN go build
 
 FROM alpine
 COPY --from=builder /build/configs/ /app/configs
+COPY --from=builder /build/docs /app/docs
 COPY --from=builder /build/entrypoint.sh /entrypoint.sh
 COPY --from=builder /build/blog-service /app/blog-service
 WORKDIR /app

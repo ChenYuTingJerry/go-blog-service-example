@@ -49,8 +49,11 @@ func setupDBEngine() error {
 	return nil
 }
 
+// @title Blog System
+// @version 1.0
+// @description Blog practice
+// @termsOfService https://github.com/blog-service-example
 func main() {
-	global.Logger.Infof("%s: go-programming-book/%s", "eddycjy","blog-service")
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routes.NewRouter()
 	s := &http.Server{

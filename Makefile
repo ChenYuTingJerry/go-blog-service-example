@@ -8,3 +8,4 @@ down:
 	docker-compose down
 prune:
 	docker system prune
+turn_off: down prune
